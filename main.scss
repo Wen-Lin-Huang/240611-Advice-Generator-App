@@ -1,0 +1,125 @@
+$colors:hsl(193, 38%, 86%),hsl(150, 100%, 66%),hsl(217, 19%, 38%),hsl(217, 19%, 24%),hsl(218, 23%, 16%);
+
+:root {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font: {
+        family:Manrope,Verdana, Geneva, Tahoma, sans-serif;
+        weight:800;
+        size:16px;
+    }
+    background:nth($colors,5);
+    height:100vh;
+    padding:10vh 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main {
+    background:nth($colors,4);
+    width:40vw;
+    min-height:50vh;
+    padding:5vh 5vw 10vh;
+    margin-bottom:0;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .advice {
+        color:nth($colors,2);
+        letter-spacing:0.3rem;
+    }
+
+    #content {
+        color:nth($colors,1);
+        font-size:2rem;
+        letter-spacing:0.1rem;
+        word-spacing: 0.2rem;
+    }
+
+    .svg_desktop {
+        text-align: center;
+        &>img {
+            width:100%;
+            margin-top:3%;
+        }
+    }
+}
+
+.btn {
+    background-color:nth($colors,2);
+    width:62px;
+    height:62px;
+    border-radius:50%;
+    align-self: center;
+    margin-top:0;
+    position:relative;
+    bottom:31px;
+    
+    &>img {
+        margin:18px 18px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        box-shadow:0 0 40px nth($colors,2);
+    }
+}
+
+//RWD
+@media (max-width:430px) {
+    #main {
+        width:80vw;
+
+        .advice {
+            font-size:12px;
+        }
+
+        #content {
+            font-size:1rem;
+        }
+    }
+
+    .btn {
+        width:48px;
+        height:48px;
+        bottom:24px;
+
+        &>img {
+            width:18px;
+            height:18px;
+            margin:15px 15px;
+        }
+    }
+}
+
+@media (min-width:2510px) {
+    #main {
+        .advice {
+            font-size:2rem;
+        }
+
+        #content {
+            font-size:3rem;
+        }
+    }
+
+    .btn {
+        width:86px;
+        height:86px;
+        bottom:43px;
+
+        &>img {
+            width:36px;
+            height:36px;
+            margin:25px 25px;
+        }
+    }
+}
